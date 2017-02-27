@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+
+  events:
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-events:latest
+    ports:
+      - 9082:80
+    networks:
+      - cluster-demo
+    deploy:
+      replicas: 1
+
+  locations:
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-locations:latest
+    ports:
+      - 9081:80
+    networks:
+      - cluster-demo
+    deploy:
+      replicas: 1
+
+  tickets:
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-tickets:latest
+    ports:
+      - 9080:80
+    networks:
+      - cluster-demo
+    deploy:
+      replicas: 1
+
+  composite:
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-composite:latest
+    ports:
+      - 9083:80
+    networks:
+      - cluster-demo
+    deploy:
+      replicas: 1
+
+networks:
+  cluster-demo:
+    external: true
