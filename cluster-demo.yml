@@ -10,6 +10,11 @@ services:
       - cluster-demo
     deploy:
       replicas: 1
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://10.1.102.175:12201"
+        tag: "EventService"
 
   locations:
     image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-locations:latest
@@ -19,6 +24,11 @@ services:
       - cluster-demo
     deploy:
       replicas: 1
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://10.1.102.175:12201"
+        tag: "LocationService"
 
   tickets:
     image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-tickets:latest
@@ -28,6 +38,11 @@ services:
       - cluster-demo
     deploy:
       replicas: 1
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://10.1.102.175:12201"
+        tag: "TicketService"
 
   composite:
     image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-composite:latest
@@ -37,6 +52,11 @@ services:
       - cluster-demo
     deploy:
       replicas: 1
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://10.1.102.175:12201"
+        tag: "CompositeService"
 
 networks:
   cluster-demo:
