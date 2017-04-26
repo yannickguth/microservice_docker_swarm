@@ -3,7 +3,7 @@ version: "3"
 services:
 
   events:
-    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-events:latest
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-events:16
     ports:
       - 9082:80
     networks:
@@ -17,7 +17,7 @@ services:
         tag: "EventService"
 
   locations:
-    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-locations:latest
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-locations:12
     ports:
       - 9081:80
     networks:
@@ -31,7 +31,7 @@ services:
         tag: "LocationService"
 
   tickets:
-    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-tickets:latest
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-tickets:17
     ports:
       - 9080:80
     networks:
@@ -45,7 +45,7 @@ services:
         tag: "TicketService"
 
   composite:
-    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-composite:latest
+    image: adesso-lob-banking-amp-test01.test-server.ag:5000/microservice-composite:14
     ports:
       - 9083:80
     networks:

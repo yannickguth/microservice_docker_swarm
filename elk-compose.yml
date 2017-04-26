@@ -18,3 +18,8 @@ kibana:
         - 5601:5601
     links:
         - elasticsearch
+
+zipkin:
+    image: openzipkin/zipkin:latest
+    ports:
+        - 9411:9411
